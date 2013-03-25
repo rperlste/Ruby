@@ -1,9 +1,12 @@
 # Robbie Perlstein
 # Mar 25, 2013
-# Ruby second program
-# quicksort - sorting a 1000 element array
+# QuickSort in Ruby
+# 
+# Generates an random array of 1000 elements
+# in the range (1, 1000). Uses quicksort to
+# sort the array.
 
-# made a class for no reason
+# This class is kind of unncessary.
 class QSort
 
 	private
@@ -38,8 +41,9 @@ class QSort
 	
 	public
 	# Sort an entire array. Removes nil entries. 
-	# All elements must be the same type. 
-	# Return sort time
+	# All elements must be the same type, or 
+	# undefined behavior is to be expected!
+	# Returns the time needed to sort.
 	def qSort( qArr )
 		qArr.delete_if{ |x| x == nil }
 		t1 = Time.now
@@ -55,7 +59,8 @@ for i in 0...1000
 	a.push( Random.rand( 1..1000 ) )
 end
 puts( a.size )
-print( "\n\nQuick sort Ruby demo. Sort a random array with 1000 elements.\nPress ENTER to continue...\n" )
+print( "\n\nQuick sort Ruby demo. Sort a random array with 1000 elements." )
+print( "\nPress ENTER to continue...\n" )
 gets
 print( "Initial array: ", a, "\n\n" )
 qSorter = QSort.new
